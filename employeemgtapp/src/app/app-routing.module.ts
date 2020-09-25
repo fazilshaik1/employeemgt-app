@@ -3,8 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ListEmployeesComponent } from './list-employees/list-employees.component';
+import { ProjectHomeComponent } from './project-home/project-home.component';
 
 const routes: Routes = [
+  {
+    path:'app-project-home',
+    component:ProjectHomeComponent
+  },
+  {
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
+  },
   {
     path:'employee-details',
     component:EmployeeDetailsComponent
