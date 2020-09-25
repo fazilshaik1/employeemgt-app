@@ -1,0 +1,7 @@
+<h2>Employee details</h2>
+<form #idform=ngForm (ngSubmit)=findEmployee(idform)>
+    <label>Employee id</label>
+    <input type="number" name="employeeid" ngModel>
+
+    <input type="submit" value="Search">
+</form>

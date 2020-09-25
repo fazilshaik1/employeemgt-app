@@ -1,0 +1,34 @@
+
+<h1>Add Employee</h1>
+<form #employeeForm=ngForm (ngSubmit)="employeeForm.valid && addEmployee(employeeForm)">
+    <div>
+        <label>Employee name</label>
+        <input type="text" name="name" required minlength="2" ngModel #employeeNameCtrl=ngModel >    
+    </div>
+    
+    <div *ngIf="employeeNameCtrl.errors!=null && employeeNameCtrl.errors.required" class="error">
+     Employee name is required
+    </div>
+    
+    <div *ngIf="employeeNameCtrl.errors!=null && employeeNameCtrl.errors.minlength" class="error">
+        minlength is 2
+       </div>
+    
+    <div>
+        <label>Salary</label>
+        <input type="number" name="salary" ngModel #salaryCtrl=ngModel required>    
+    </div>
+    
+    <div *ngIf="salaryCtrl.errors!=null && salaryCtrl.errors.required" class="error">
+       Salary is required
+    </div>
+    
+    <input type="submit" value="Submit">
+</form>
+
+<div *ngIf="employee!==undefined">
+    <h2>Added employee is </h2>
+    id is {{employee.id}}
+    name is {{employee.name}}
+    salary is {{employee.salary}}
+</div>
